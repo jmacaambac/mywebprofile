@@ -4,25 +4,90 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Webpage</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-section {
+            position: relative;
+            text-align: center;
+        }
+        .profile-pic {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid white;
+        }
+        .side-icons {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: all 0.3s ease-in-out;
+        }
+        .left {
+            left: 10px;
+        }
+        .right {
+            right: 10px;
+        }
+        .bottom-icons {
+            position: absolute;
+            bottom: 20px;
+            display: flex;
+            gap: 10px;
+            transition: all 0.3s ease-in-out;
+        }
+        .icon {
+            display: inline-block;
+            padding: 10px;
+            background: white;
+            color: black;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 20px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .icon:hover {
+            background: #555;
+            color: white;
+            transform: scale(1.2);
+        }
+    </style>
 </head>
 <body>
     <div class="container">
-        <div class="profile">
+        <div class="profile-section">
             <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
             <h1>JADE MACAAMBAC, CSP, CST, OSH-SO3</h1>
             <p>SECURITY PROFESSIONAL<br>BASIC GRAPHIC DESIGNER</p>
         </div>
+        
         <div class="side-icons left">
             <a href="yourpage1.html" class="icon">ℹ️</a>
             <a href="yourpage2.html" class="icon">⚙️</a>
             <a href="yourpage3.html" class="icon">📄</a>
         </div>
+        
         <div class="side-icons right">
             <a href="yourpage4.html" class="icon">📑</a>
             <a href="yourpage5.html" class="icon">⚙️</a>
             <a href="yourpage6.html" class="icon">ℹ️</a>
         </div>
+        
         <div class="bottom-icons">
             <a href="yourpage7.html" class="icon">📖</a>
             <a href="yourpage8.html" class="icon">🐱</a>
@@ -33,5 +98,15 @@
             <a href="yourpage13.html" class="icon">📞</a>
         </div>
     </div>
+    <script>
+        document.querySelectorAll('.side-icons, .bottom-icons').forEach(container => {
+            container.addEventListener('mouseenter', () => {
+                container.style.transform = 'scale(1.1)';
+            });
+            container.addEventListener('mouseleave', () => {
+                container.style.transform = 'scale(1)';
+            });
+        });
+    </script>
 </body>
 </html>
