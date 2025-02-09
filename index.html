@@ -57,10 +57,28 @@
             flex-direction: column;
             transition: width 0.5s;
             width: 50px;
-            text-align: center;
+            gap: 10px;
+            text-align: left;
         }
         .icon-bar:hover {
             width: 200px;
+        }
+        .icon-bar2{
+            display: flex;
+            justify-content: center;
+            background: red;
+            background-color: rgba(255,255,255,0.5);
+            padding: 10px;
+            color: white;
+            cursor: pointer;
+            flex-direction: row;
+            transition: width 0.5s;
+            width: 600px;
+            gap: 40px;
+            text-align: bottom;
+        }
+        .icon-bar2: hover{
+            width: 800px;
         }
            .side-icons {
             position: absolute;
@@ -68,24 +86,26 @@
             transform: translateY(-50%);
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 50px;
             transition: all 0.3s ease-in-out;
         }
         .left {
-            left: 30px;
+            left: 20px;
         }
         .right {
-            right:30px;
+            right:20px;
         }
         .side-icons a {
             transform: translateX(0);
             transition: transform 0.3s ease-in-out;
         }
         .left a:hover {
-            transform: translateX(50px);
+            transform: translateX(40px);
+            border-radius: 5%;
         }
         .right a:hover {
-            transform: translateX(-50px);
+            transform: translateX(-40px);
+            border-radius: 5%;
         }
         .bottom-icons {
             position: relative;
@@ -104,16 +124,31 @@
         }
         .icon {
             display: inline-block;
-            padding: 15px;
+            padding: 5px;
             background: rgb(255, 79, 80);
             color: black;
-            border-radius: 100%;
+            border-radius: 30%;
             text-decoration: none;
             font-size: 20px;
+            gap: 10px;
             transition: transform 0.3s ease-in-out;
         }
+        .menu-text {
+    position: absolute;
+    opacity: 0;
+    font-size: 16px;
+    color: black;
+    font-weight: bold;
+    transition: opacity 0.3s ease-in-out;
+    white-space: nowrap; 
+}
+.icon:hover .menu-text {
+    opacity: 1;
+}
         .icon:hover {
             background: #fff
+            border-radius: 10%;
+            padding: 3px;
         }
         .footer {
             margin-top: 20px;
@@ -139,29 +174,31 @@
         
         <div class="side-icons left">
         <div class="icon-bar">
-            <span class="side-icons left"></span>
-            <a href="yourpage1.html" class="icon"><img src="about.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage2.html" class="icon"><img src="skills.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage3.html" class="icon"><img src="experience.png" alt="Profile Picture" width="20"></a>
+          
+            <a href="yourpage1.html" class="icon"><img src="about.png" alt="About" width="35"><span class="menu-text">About</span></a>
+            <a href="yourpage2.html" class="icon"><img src="skills.png" alt="Skills" width="35"><span class="menu-text">Skills</span></a>
+            <a href="yourpage3.html" class="icon"><img src="experience.png" alt="Experience" width="35"><span class="menu-text">Experience</span></a>
         </div>
     </div>
         <div class="side-icons right">
         <div class="icon-bar">
-            <a href="yourpage4.html" class="icon"><img src="gallery.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage5.html" class="icon"><img src="achieve.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage6.html" class="icon"><img src="settings.png" alt="Profile Picture" width="20"></a>
+            <a href="yourpage4.html" class="icon"><img src="gallery.png" alt="Gallery" width="35"><span class="menu-text">Gallery</span></a>
+            <a href="yourpage5.html" class="icon"><img src="achieve.png" alt="Achievements" width="35"><span class="menu-text">Achievements</span></a>
+            <a href="yourpage6.html" class="icon"><img src="settings.png" alt="Settings" width="35"><span class="menu-text">Settings</span></a>
         </div>
     </div>    
         <div class="bottom-icons">
-            <a href="yourpage7.html" class="icon"><img src="resume.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage8.html" class="icon"><img src="project.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage9.html" class="icon"><img src="career.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage10.html" class="icon"><img src="github.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage11.html" class="icon"><img src="facebook.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage12.html" class="icon"><img src="linkedin.png" alt="Profile Picture" width="20"></a>
-            <a href="yourpage13.html" class="icon"><img src="email.png" alt="Profile Picture" width="20"></a>
+            <div class="icon-bar2">
+            <a href="yourpage7.html" class="icon"><img src="resume.png" alt="Resume" width="35"><span class="menu-text">Download my Resume</span></a>
+            <a href="yourpage8.html" class="icon"><img src="project.png" alt="Projects" width="35"><span class="menu-text">Projects</span></a>
+            <a href="yourpage9.html" class="icon"><img src="career.png" alt="Career" width="35"><span class="menu-text">Career</span></a>
+            <a href="yourpage10.html" class="icon"><img src="github.png" alt="May Page" width="35"><span class="menu-text">My Page</span></a>
+            <a href="yourpage11.html" class="icon"><img src="facebook.png" alt="My FB Profile" width="35"><span class="menu-text">My FB Profile</span></a>
+            <a href="yourpage12.html" class="icon"><img src="linkedin.png" alt="My Professional Profile" width="35"><span class="menu-text">My Professional Profile</span></a>
+            <a href="yourpage13.html" class="icon"><img src="email.png" alt="Contact Me" width="35"><span class="menu-text">Contact Me</span></a>
         </div>
     </div>
+</div>
     <div class="footer">&copy; 2025 JADE MACAAMBAC. All Rights Reserved.</div>
     <div class="logo">
         <img src="JPM Logo.png" alt="JPM Logo" style="width:60px;height:60px;";>
