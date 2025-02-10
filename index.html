@@ -45,7 +45,7 @@
         }
 
       
-        .icon-bar, .icon-bar2 {
+        .icon-bar1, {
             display: flex;
             justify-content: center;
             background-color: rgba(255,255,255,0.5);
@@ -55,6 +55,21 @@
             gap: 10px;
             transition: width 0.5s;
         }
+        .icon-bar2{
+            display: flex;
+            justify-content: center;
+            background: red;
+            background-color: rgba(255,255,255,0.5);
+            padding: 5px;
+            color: white;
+            cursor: pointer;
+            flex-direction: row;
+            transition: width 0.5s;
+            width: 600px;
+            gap: 60px;
+            text-align: bottom;
+        }
+
         .icon-bar {
             flex-direction: column;
             width: 50px;
@@ -62,13 +77,9 @@
         .icon-bar:hover {
             width: 200px;
         }
-        .icon-bar2 {
-            flex-direction: row;
-            flex-wrap: wrap;
-            width: 100%;
-            gap: 20px;
+        .icon-bar2: hover{
+            width: 800px;
         }
-
        
         .side-icons {
             position: absolute;
@@ -188,7 +199,7 @@
         
         
         <div class="side-icons left">
-            <div class="icon-bar">
+            <div class="icon-bar1">
                <a href="https://jmacaambac.github.io/aboutme/" class="icon"><img src="about.png" alt="About" width="35"><span class="menu-text">About</span></a>
             <a href="Skills Page.png" class="icon"><img src="skills.png" alt="Skills" width="35"><span class="menu-text">Skills</span></a>
             <a href="Experience Page.png" class="icon"><img src="experience.png" alt="Experience" width="32"><span class="menu-text">Experience</span></a>
@@ -197,7 +208,7 @@
         </div>
 
         <div class="side-icons right">
-            <div class="icon-bar">
+            <div class="icon-bar1">
                 <a href="https://jmacaambac.github.io/jpmgallery/" class="icon"><img src="gallery.png" alt="Gallery" width="33"><span class="menu-text">Gallery</span></a>
             <a href="jade61.jpg" class="icon"><img src="achieve.png" alt="Achievements" width="35"><span class="menu-text">Achievements</span></a>
             <a href="jade25.jpg" class="icon"><img src="business.png" alt="Business" width="33"><span class="menu-text">My Businesses</span></a>
