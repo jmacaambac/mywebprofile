@@ -216,6 +216,27 @@
             }
         }
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("bg-music");
+        const muteBtn = document.getElementById("mute-btn");
+        audio.oncanplaythrough = function() {
+            console.log("Audio is ready to play!");
+            audio.muted = false;
+        };
+        muteBtn.addEventListener("click", function () {
+            if (audio) {
+                audio.muted = !audio.muted;
+                if (audio.muted) {
+                    muteBtn.textContent = "🔊";
+                } else {
+                    muteBtn.textContent = "🔇";
+                }
+                console.log("Audio muted status:", audio.muted);
+            }
+        });
+    });
+</script>
 </head>
 <body>
     <div class="main-container">
@@ -224,7 +245,9 @@
             <h1><strong>JADE MACAAMBAC<br>CSP, CST, OSH-SO3</strong></h1>
             <p style="font-size: x-large"><strong>SECURITY PROFESSIONAL<br>BASIC GRAPHIC DESIGNER</strong></p>
         </div>
-        
+        <div>      
+    <span id="mute-btn" style="cursor: pointer; font-size: 24px;">🔇</span>
+    </div> 
         <div class="side-icons left">
             <div class="icon-bar">
             <a href="https://jmacaambac.github.io/aboutme/" class="icon"><img src="about.png" alt="About" width="35"><span class="menu-text">About</span></a>
@@ -257,5 +280,9 @@
 
     <div class="footer">&copy; 2025 JADE MACAAMBAC. All Rights Reserved.</div>
     <div class="logo"><img src="JPM Logo.png" width="50"></div>
+    <audio id="bg-music" autoplay loop>
+    <source src="myworkspeech.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+     </audio>
 </body>
 </html>
