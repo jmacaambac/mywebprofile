@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievement Ongoing Construction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+
+        .construction-text {
+            font-size: 2em;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-10px); }
+        }
+
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-top: 30px;
+        }
+
+        .gear {
+            font-size: 40px;
+            position: absolute;
+            top: -40px; left: -40px;
+            animation: spin 2s linear infinite;
+        }
+
+        .gear:nth-child(2) { top: -40px; right: -40px; animation-delay: 0.5s; }
+        .gear:nth-child(3) { bottom: -40px; left: -40px; animation-delay: 1s; }
+        .gear:nth-child(4) { bottom: -40px; right: -40px; animation-delay: 1.5s; }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .logo-container img {
+            width: 160px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .loading span {
+            animation: blink 1.5s infinite;
+        }
+
+        .loading span:nth-child(1) { animation-delay: 0s; }
+        .loading span:nth-child(2) { animation-delay: 0.3s; }
+        .loading span:nth-child(3) { animation-delay: 0.6s; }
+
+        @keyframes blink {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .progress-container {
+            width: 80%;
+            background-color: #444;
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            width: 0%;
+            height: 100%;
+            background-color: #f39c12;
+            animation: progress 5s infinite linear;
+        }
+
+        @keyframes progress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+    </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const audio = document.getElementById("bg-music");
+        const muteBtn = document.getElementById("mute-btn");
+        audio.oncanplaythrough = function() {
+            console.log("Audio is ready to play!");
+            audio.muted = false;
+        };
+        muteBtn.addEventListener("click", function () {
+            if (audio) {
+                audio.muted = !audio.muted;
+                if (audio.muted) {
+                    muteBtn.textContent = "🔊";
+                } else {
+                    muteBtn.textContent = "🔇";
+                }
+                console.log("Audio muted status:", audio.muted);
+            }
+        });
+    });
+</script>
+
+</head>
+<body>
+    <div class="construction-text">🚧 Under Construction 🚧</div>
+    <div class="logo-container">
+        <img src="JPM Logo.png" alt="Your Logo">
+
+        <div class="gear">⚙️</div>
+        <div class="gear">⚙️</div>
+        <div class="gear">⚙️</div>
+        <div class="gear">⚙️</div>
+    </div>
+    <div class="loading">
+        Loading<span>.</span><span>.</span><span>.</span>
+    </div>
+
+    <div class="progress-container">
+        <div class="progress-bar"></div>
+    </div>
+<audio id="bg-music" autoplay loop>
+    <source src="plebesong.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+     </audio>
+<span id="mute-btn" style="cursor: pointer; font-size: 24px;">🔇</span>
+</body>
+</html>
